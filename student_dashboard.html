@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h2>Welcome {{ student[1] }}</h2>
+    <p>Email: {{ student[2] }}</p>
+    <p>Branch: {{ student[3] }}, Year: {{ student[4] }}, Section: {{ student[5] }}</p>
+    <h3>Attendance Records</h3>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        {% for att in attendance %}
+        <tr>
+            <td>{{ att[0] }}</td>
+            <td>{{ att[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/"><button>Back to Dashboard</button></a>
+</body>
+</html>

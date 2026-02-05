@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Attendance</title>
+</head>
+<body>
+    <h2>Attendance for Month {{ month }}</h2>
+
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        {% for r in records %}
+        <tr>
+            <td>{{ r[0] }}</td>
+            <td>{{ r[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <h3>Total Days: {{ total }}</h3>
+    <h3>Present: {{ present }}</h3>
+    <h3>Attendance Percentage: {{ percentage }}%</h3>
+
+    <br>
+    <a href="javascript:history.back()">
+        <button>Back</button>
+    </a>
+</body>
+</html>

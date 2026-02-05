@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Attendance</title>
+</head>
+<body>
+    <h2>Select Student</h2>
+
+    <form method="POST">
+        <select name="student_id">
+            {% for s in students %}
+                <option value="{{ s[0] }}">{{ s[1] }} ({{ s[0] }})</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        {% for m in range(1,13) %}
+            <button formaction="/faculty/monthly/{{ m }}" formmethod="POST">
+                Month {{ m }}
+            </button>
+        {% endfor %}
+    </form>
+
+    <br>
+    <a href="/faculty/dashboard"><button>Back</button></a>
+</body>
+</html>
